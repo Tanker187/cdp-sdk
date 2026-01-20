@@ -3884,8 +3884,15 @@ describe("CDP Client E2E Tests", () => {
           const rpcCalls = fetchSpy.mock.calls.filter(call => {
             const url = call[0] as string;
             const body = call[1]?.body;
+            let hostnameMatches = false;
+            try {
+              const parsedUrl = new URL(url);
+              hostnameMatches = parsedUrl.hostname === "sepolia.optimism.io";
+            } catch {
+              hostnameMatches = false;
+            }
             return (
-              url.includes("https://sepolia.optimism.io") &&
+              hostnameMatches &&
               body &&
               body.toString().includes("eth_sendTransaction")
             );
