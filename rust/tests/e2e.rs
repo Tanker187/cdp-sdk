@@ -110,10 +110,10 @@ async fn test_evm_account_crud_operations() -> Result<(), Box<dyn std::error::Er
     assert!(!account.address.is_empty());
     assert!(account.address.starts_with("0x"));
 
-    logger.log(&format!(
-        "Successfully created EVM account with name: {:?} and address: {:?}",
-        account.name, account.address
-    ));
+    logger.log("Successfully created EVM account");
+
+
+
 
     let account_address = account.address.clone();
     let account_name = account.name.clone();
@@ -156,10 +156,10 @@ async fn test_evm_account_crud_operations() -> Result<(), Box<dyn std::error::Er
     let accounts_list = list_response.into_inner();
 
     // Verify our account is in the list
-    logger.log(&format!(
-        "Successfully listed accounts, found {} accounts",
-        accounts_list.accounts.len()
-    ));
+    logger.log("Successfully listed accounts");
+
+
+
     assert!(
         !accounts_list.accounts.is_empty(),
         "Accounts list should not be empty"
@@ -281,7 +281,7 @@ async fn test_evm_sign_functions() -> Result<(), Box<dyn std::error::Error>> {
         .await?;
 
     let account = response.into_inner();
-    logger.log(&format!("Created test account: {:?}", account.address));
+    logger.log("Created test account");
 
     // Test sign hash
     logger.log("Testing sign hash");
@@ -373,10 +373,10 @@ async fn test_smart_account_operations() -> Result<(), Box<dyn std::error::Error
         .await?;
 
     let owner_account = owner_response.into_inner();
-    logger.log(&format!(
-        "Created owner account: {:?}",
-        owner_account.address
-    ));
+    logger.log("Created owner account");
+
+
+
 
     // Test create smart account
     logger.log("Testing create smart account");
@@ -395,10 +395,10 @@ async fn test_smart_account_operations() -> Result<(), Box<dyn std::error::Error
     let smart_account = smart_response.into_inner();
     assert!(!smart_account.address.is_empty());
     assert!(smart_account.address.starts_with("0x"));
-    logger.log(&format!(
-        "Created smart account: {:?}",
-        smart_account.address
-    ));
+    logger.log("Created smart account");
+
+
+
 
     // Test list smart accounts
     logger.log("Testing list smart accounts");
@@ -411,10 +411,10 @@ async fn test_smart_account_operations() -> Result<(), Box<dyn std::error::Error
     assert!(list_response.status().is_success());
     let smart_accounts_list = list_response.into_inner();
     assert!(!smart_accounts_list.accounts.is_empty());
-    logger.log(&format!(
-        "Found {} smart accounts",
-        smart_accounts_list.accounts.len()
-    ));
+    logger.log("Found smart accounts");
+
+
+
 
     // Test get smart account by address
     logger.log("Testing get smart account by address");
@@ -483,7 +483,7 @@ async fn test_solana_account_operations() -> Result<(), Box<dyn std::error::Erro
         account.name.as_ref().map(|n| n.as_str()),
         Some(random_name.as_str())
     );
-    logger.log(&format!("Created Solana account: {:?}", account.address));
+    logger.log("Created Solana account");
 
     let account_address = account.address.clone();
     let account_name = account.name.clone();
@@ -523,10 +523,10 @@ async fn test_solana_account_operations() -> Result<(), Box<dyn std::error::Erro
     assert!(list_response.status().is_success());
     let accounts_list = list_response.into_inner();
     assert!(!accounts_list.accounts.is_empty());
-    logger.log(&format!(
-        "Found {} Solana accounts",
-        accounts_list.accounts.len()
-    ));
+    logger.log("Found Solana accounts");
+
+
+
 
     // Test update Solana account
     logger.log("Testing update Solana account");
@@ -576,10 +576,10 @@ async fn test_solana_sign_functions() -> Result<(), Box<dyn std::error::Error>> 
         .await?;
 
     let account = response.into_inner();
-    logger.log(&format!(
-        "Created test Solana account: {:?}",
-        account.address
-    ));
+    logger.log("Created test Solana account");
+
+
+
 
     // Test sign message
     logger.log("Testing Solana sign message");
