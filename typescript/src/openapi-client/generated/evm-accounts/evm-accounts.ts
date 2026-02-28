@@ -7,12 +7,16 @@
  */
 import type {
   CreateEvmAccountBody,
+  CreateEvmEip7702Delegation201,
+  CreateEvmEip7702DelegationBody,
   EIP712Message,
   EvmAccount,
+  EvmEip7702DelegationStatus,
   ExportEvmAccount200,
   ExportEvmAccountBody,
   ExportEvmAccountByName200,
   ExportEvmAccountByNameBody,
+  GetEvmEip7702DelegationStatusParams,
   ImportEvmAccountBody,
   ListEvmAccounts200,
   ListEvmAccountsParams,
@@ -229,6 +233,47 @@ export const signEvmTypedData = (
   );
 };
 /**
+ * Returns the current EIP-7702 delegation state for an EVM account. Used to check if an account has been upgraded with smart account capabilities or needs to be upgraded.
+ * @summary Get EIP-7702 delegation status
+ */
+export const getEvmEip7702DelegationStatus = (
+  address: string,
+  params: GetEvmEip7702DelegationStatusParams,
+  options?: SecondParameter<typeof cdpApiClient>,
+) => {
+  return cdpApiClient<EvmEip7702DelegationStatus>(
+    { url: `/v2/evm/accounts/${address}/eip7702/delegation`, method: "GET", params },
+    options,
+  );
+};
+/**
+ * Creates an EIP-7702 delegation for an EVM EOA account, upgrading it with smart account capabilities.
+
+This endpoint:
+- Retrieves delegation artifacts from onchain
+- Signs the EIP-7702 authorization for delegation
+- Assembles and submits a Type 4 transaction
+- Creates an associated smart account object
+
+The delegation allows the EVM EOA to be used as a smart account, which enables batched transactions and gas sponsorship via paymaster.
+ * @summary Create EIP-7702 delegation
+ */
+export const createEvmEip7702Delegation = (
+  address: string,
+  createEvmEip7702DelegationBody: CreateEvmEip7702DelegationBody,
+  options?: SecondParameter<typeof cdpApiClient>,
+) => {
+  return cdpApiClient<CreateEvmEip7702Delegation201>(
+    {
+      url: `/v2/evm/accounts/${address}/eip7702/delegation`,
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      data: createEvmEip7702DelegationBody,
+    },
+    options,
+  );
+};
+/**
  * Import an existing EVM account into the developer's CDP Project. This API should be called from the [CDP SDK](https://github.com/coinbase/cdp-sdk) to ensure that the associated private key is properly encrypted.
  * @summary Import an EVM account
  */
@@ -296,6 +341,12 @@ export type SignEvmTransactionResult = NonNullable<Awaited<ReturnType<typeof sig
 export type SignEvmHashResult = NonNullable<Awaited<ReturnType<typeof signEvmHash>>>;
 export type SignEvmMessageResult = NonNullable<Awaited<ReturnType<typeof signEvmMessage>>>;
 export type SignEvmTypedDataResult = NonNullable<Awaited<ReturnType<typeof signEvmTypedData>>>;
+export type GetEvmEip7702DelegationStatusResult = NonNullable<
+  Awaited<ReturnType<typeof getEvmEip7702DelegationStatus>>
+>;
+export type CreateEvmEip7702DelegationResult = NonNullable<
+  Awaited<ReturnType<typeof createEvmEip7702Delegation>>
+>;
 export type ImportEvmAccountResult = NonNullable<Awaited<ReturnType<typeof importEvmAccount>>>;
 export type ExportEvmAccountResult = NonNullable<Awaited<ReturnType<typeof exportEvmAccount>>>;
 export type ExportEvmAccountByNameResult = NonNullable<

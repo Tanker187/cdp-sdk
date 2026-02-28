@@ -66,44 +66,62 @@ const (
 
 // Defines values for ErrorType.
 const (
-	ErrorTypeAccountLimitExceeded            ErrorType = "account_limit_exceeded"
-	ErrorTypeAlreadyExists                   ErrorType = "already_exists"
-	ErrorTypeBadGateway                      ErrorType = "bad_gateway"
-	ErrorTypeDocumentVerificationFailed      ErrorType = "document_verification_failed"
-	ErrorTypeFaucetLimitExceeded             ErrorType = "faucet_limit_exceeded"
-	ErrorTypeForbidden                       ErrorType = "forbidden"
-	ErrorTypeGuestPermissionDenied           ErrorType = "guest_permission_denied"
-	ErrorTypeGuestRegionForbidden            ErrorType = "guest_region_forbidden"
-	ErrorTypeGuestTransactionCount           ErrorType = "guest_transaction_count"
-	ErrorTypeGuestTransactionLimit           ErrorType = "guest_transaction_limit"
-	ErrorTypeIdempotencyError                ErrorType = "idempotency_error"
-	ErrorTypeInternalServerError             ErrorType = "internal_server_error"
-	ErrorTypeInvalidRequest                  ErrorType = "invalid_request"
-	ErrorTypeInvalidSignature                ErrorType = "invalid_signature"
-	ErrorTypeInvalidSqlQuery                 ErrorType = "invalid_sql_query"
-	ErrorTypeMalformedTransaction            ErrorType = "malformed_transaction"
-	ErrorTypeMfaAlreadyEnrolled              ErrorType = "mfa_already_enrolled"
-	ErrorTypeMfaFlowExpired                  ErrorType = "mfa_flow_expired"
-	ErrorTypeMfaInvalidCode                  ErrorType = "mfa_invalid_code"
-	ErrorTypeMfaNotEnrolled                  ErrorType = "mfa_not_enrolled"
-	ErrorTypeMfaRequired                     ErrorType = "mfa_required"
-	ErrorTypeNetworkNotTradable              ErrorType = "network_not_tradable"
-	ErrorTypeNotFound                        ErrorType = "not_found"
-	ErrorTypePaymentMethodRequired           ErrorType = "payment_method_required"
-	ErrorTypePhoneNumberVerificationExpired  ErrorType = "phone_number_verification_expired"
-	ErrorTypePolicyInUse                     ErrorType = "policy_in_use"
-	ErrorTypePolicyViolation                 ErrorType = "policy_violation"
-	ErrorTypeRateLimitExceeded               ErrorType = "rate_limit_exceeded"
-	ErrorTypeRecipientAllowlistPending       ErrorType = "recipient_allowlist_pending"
-	ErrorTypeRecipientAllowlistViolation     ErrorType = "recipient_allowlist_violation"
-	ErrorTypeRequestCanceled                 ErrorType = "request_canceled"
-	ErrorTypeServiceUnavailable              ErrorType = "service_unavailable"
-	ErrorTypeTimedOut                        ErrorType = "timed_out"
-	ErrorTypeTransferAmountOutOfBounds       ErrorType = "transfer_amount_out_of_bounds"
-	ErrorTypeTransferQuoteExpired            ErrorType = "transfer_quote_expired"
-	ErrorTypeTransferRecipientAddressInvalid ErrorType = "transfer_recipient_address_invalid"
-	ErrorTypeTravelRulesRecipientViolation   ErrorType = "travel_rules_recipient_violation"
-	ErrorTypeUnauthorized                    ErrorType = "unauthorized"
+	ErrorTypeAccountLimitExceeded           ErrorType = "account_limit_exceeded"
+	ErrorTypeAlreadyExists                  ErrorType = "already_exists"
+	ErrorTypeAssetMismatch                  ErrorType = "asset_mismatch"
+	ErrorTypeBadGateway                     ErrorType = "bad_gateway"
+	ErrorTypeDocumentVerificationFailed     ErrorType = "document_verification_failed"
+	ErrorTypeFaucetLimitExceeded            ErrorType = "faucet_limit_exceeded"
+	ErrorTypeForbidden                      ErrorType = "forbidden"
+	ErrorTypeGuestPermissionDenied          ErrorType = "guest_permission_denied"
+	ErrorTypeGuestRegionForbidden           ErrorType = "guest_region_forbidden"
+	ErrorTypeGuestTransactionCount          ErrorType = "guest_transaction_count"
+	ErrorTypeGuestTransactionLimit          ErrorType = "guest_transaction_limit"
+	ErrorTypeIdempotencyError               ErrorType = "idempotency_error"
+	ErrorTypeInsufficientBalance            ErrorType = "insufficient_balance"
+	ErrorTypeInternalServerError            ErrorType = "internal_server_error"
+	ErrorTypeInvalidRequest                 ErrorType = "invalid_request"
+	ErrorTypeInvalidSignature               ErrorType = "invalid_signature"
+	ErrorTypeInvalidSqlQuery                ErrorType = "invalid_sql_query"
+	ErrorTypeMalformedTransaction           ErrorType = "malformed_transaction"
+	ErrorTypeMetadataKeyTooLong             ErrorType = "metadata_key_too_long"
+	ErrorTypeMetadataTooManyEntries         ErrorType = "metadata_too_many_entries"
+	ErrorTypeMetadataValueTooLong           ErrorType = "metadata_value_too_long"
+	ErrorTypeMfaAlreadyEnrolled             ErrorType = "mfa_already_enrolled"
+	ErrorTypeMfaFlowExpired                 ErrorType = "mfa_flow_expired"
+	ErrorTypeMfaInvalidCode                 ErrorType = "mfa_invalid_code"
+	ErrorTypeMfaNotEnrolled                 ErrorType = "mfa_not_enrolled"
+	ErrorTypeMfaRequired                    ErrorType = "mfa_required"
+	ErrorTypeNetworkNotTradable             ErrorType = "network_not_tradable"
+	ErrorTypeNotFound                       ErrorType = "not_found"
+	ErrorTypeOrderAlreadyCanceled           ErrorType = "order_already_canceled"
+	ErrorTypeOrderAlreadyFilled             ErrorType = "order_already_filled"
+	ErrorTypeOrderQuoteExpired              ErrorType = "order_quote_expired"
+	ErrorTypePaymentMethodRequired          ErrorType = "payment_method_required"
+	ErrorTypePaymentRequired                ErrorType = "payment_required"
+	ErrorTypePhoneNumberVerificationExpired ErrorType = "phone_number_verification_expired"
+	ErrorTypePolicyInUse                    ErrorType = "policy_in_use"
+	ErrorTypePolicyViolation                ErrorType = "policy_violation"
+	ErrorTypeRateLimitExceeded              ErrorType = "rate_limit_exceeded"
+	ErrorTypeRecipientAllowlistPending      ErrorType = "recipient_allowlist_pending"
+	ErrorTypeRecipientAllowlistViolation    ErrorType = "recipient_allowlist_violation"
+	ErrorTypeRequestCanceled                ErrorType = "request_canceled"
+	ErrorTypeServiceUnavailable             ErrorType = "service_unavailable"
+	ErrorTypeSettlementFailed               ErrorType = "settlement_failed"
+	ErrorTypeSourceAccountInvalid           ErrorType = "source_account_invalid"
+	ErrorTypeSourceAccountNotFound          ErrorType = "source_account_not_found"
+	ErrorTypeSourceAssetNotSupported        ErrorType = "source_asset_not_supported"
+	ErrorTypeTargetAccountInvalid           ErrorType = "target_account_invalid"
+	ErrorTypeTargetAccountNotFound          ErrorType = "target_account_not_found"
+	ErrorTypeTargetAssetNotSupported        ErrorType = "target_asset_not_supported"
+	ErrorTypeTargetEmailInvalid             ErrorType = "target_email_invalid"
+	ErrorTypeTargetOnchainAddressInvalid    ErrorType = "target_onchain_address_invalid"
+	ErrorTypeTimedOut                       ErrorType = "timed_out"
+	ErrorTypeTransferAmountInvalid          ErrorType = "transfer_amount_invalid"
+	ErrorTypeTransferAssetNotSupported      ErrorType = "transfer_asset_not_supported"
+	ErrorTypeTravelRulesFieldMissing        ErrorType = "travel_rules_field_missing"
+	ErrorTypeTravelRulesRecipientViolation  ErrorType = "travel_rules_recipient_violation"
+	ErrorTypeUnauthorized                   ErrorType = "unauthorized"
 )
 
 // Defines values for EthValueCriterionOperator.
@@ -151,6 +169,25 @@ const (
 	EvmDataParameterConditionListOperatorNotIn EvmDataParameterConditionListOperator = "not in"
 )
 
+// Defines values for EvmEip7702DelegationNetwork.
+const (
+	EvmEip7702DelegationNetworkArbitrum        EvmEip7702DelegationNetwork = "arbitrum"
+	EvmEip7702DelegationNetworkBase            EvmEip7702DelegationNetwork = "base"
+	EvmEip7702DelegationNetworkBaseSepolia     EvmEip7702DelegationNetwork = "base-sepolia"
+	EvmEip7702DelegationNetworkEthereum        EvmEip7702DelegationNetwork = "ethereum"
+	EvmEip7702DelegationNetworkEthereumSepolia EvmEip7702DelegationNetwork = "ethereum-sepolia"
+	EvmEip7702DelegationNetworkOptimism        EvmEip7702DelegationNetwork = "optimism"
+	EvmEip7702DelegationNetworkPolygon         EvmEip7702DelegationNetwork = "polygon"
+)
+
+// Defines values for EvmEip7702DelegationStatusStatus.
+const (
+	CURRENT        EvmEip7702DelegationStatusStatus = "CURRENT"
+	NOTDELEGATED   EvmEip7702DelegationStatusStatus = "NOT_DELEGATED"
+	NOTINITIALIZED EvmEip7702DelegationStatusStatus = "NOT_INITIALIZED"
+	WRONGPROXY     EvmEip7702DelegationStatusStatus = "WRONG_PROXY"
+)
+
 // Defines values for EvmMessageCriterionType.
 const (
 	EvmMessage EvmMessageCriterionType = "evmMessage"
@@ -187,6 +224,7 @@ const (
 	EvmSwapsNetworkBase     EvmSwapsNetwork = "base"
 	EvmSwapsNetworkEthereum EvmSwapsNetwork = "ethereum"
 	EvmSwapsNetworkOptimism EvmSwapsNetwork = "optimism"
+	EvmSwapsNetworkPolygon  EvmSwapsNetwork = "polygon"
 )
 
 // Defines values for EvmTypedAddressConditionOperator.
@@ -287,9 +325,10 @@ const (
 
 // Defines values for OAuth2ProviderType.
 const (
-	Apple  OAuth2ProviderType = "apple"
-	Google OAuth2ProviderType = "google"
-	X      OAuth2ProviderType = "x"
+	Apple    OAuth2ProviderType = "apple"
+	Google   OAuth2ProviderType = "google"
+	Telegram OAuth2ProviderType = "telegram"
+	X        OAuth2ProviderType = "x"
 )
 
 // Defines values for OnchainDataResultSchemaColumnsType.
@@ -316,6 +355,12 @@ const (
 	UUID       OnchainDataResultSchemaColumnsType = "UUID"
 )
 
+// Defines values for OnrampLimitType.
+const (
+	LifetimeTransactions OnrampLimitType = "lifetime_transactions"
+	WeeklySpending       OnrampLimitType = "weekly_spending"
+)
+
 // Defines values for OnrampOrderFeeType.
 const (
 	FEETYPEEXCHANGE OnrampOrderFeeType = "FEE_TYPE_EXCHANGE"
@@ -324,7 +369,8 @@ const (
 
 // Defines values for OnrampOrderPaymentMethodTypeId.
 const (
-	GUESTCHECKOUTAPPLEPAY OnrampOrderPaymentMethodTypeId = "GUEST_CHECKOUT_APPLE_PAY"
+	GUESTCHECKOUTAPPLEPAY  OnrampOrderPaymentMethodTypeId = "GUEST_CHECKOUT_APPLE_PAY"
+	GUESTCHECKOUTGOOGLEPAY OnrampOrderPaymentMethodTypeId = "GUEST_CHECKOUT_GOOGLE_PAY"
 )
 
 // Defines values for OnrampOrderStatus.
@@ -349,6 +395,11 @@ const (
 	CRYPTOWALLET OnrampQuotePaymentMethodTypeId = "CRYPTO_WALLET"
 	FIATWALLET   OnrampQuotePaymentMethodTypeId = "FIAT_WALLET"
 	PAYPAL       OnrampQuotePaymentMethodTypeId = "PAYPAL"
+)
+
+// Defines values for OnrampUserIdType.
+const (
+	PhoneNumber OnrampUserIdType = "phone_number"
 )
 
 // Defines values for PolicyScope.
@@ -626,6 +677,13 @@ const (
 	X402SettleErrorReasonInvalidExactEvmPayloadAuthorizationValueTooLow                              X402SettleErrorReason = "invalid_exact_evm_payload_authorization_value_too_low"
 	X402SettleErrorReasonInvalidExactEvmPayloadSignature                                             X402SettleErrorReason = "invalid_exact_evm_payload_signature"
 	X402SettleErrorReasonInvalidExactEvmPayloadSignatureAddress                                      X402SettleErrorReason = "invalid_exact_evm_payload_signature_address"
+	X402SettleErrorReasonInvalidExactEvmPermit2PayloadAllowanceRequired                              X402SettleErrorReason = "invalid_exact_evm_permit2_payload_allowance_required"
+	X402SettleErrorReasonInvalidExactEvmPermit2PayloadAmount                                         X402SettleErrorReason = "invalid_exact_evm_permit2_payload_amount"
+	X402SettleErrorReasonInvalidExactEvmPermit2PayloadDeadline                                       X402SettleErrorReason = "invalid_exact_evm_permit2_payload_deadline"
+	X402SettleErrorReasonInvalidExactEvmPermit2PayloadRecipient                                      X402SettleErrorReason = "invalid_exact_evm_permit2_payload_recipient"
+	X402SettleErrorReasonInvalidExactEvmPermit2PayloadSignature                                      X402SettleErrorReason = "invalid_exact_evm_permit2_payload_signature"
+	X402SettleErrorReasonInvalidExactEvmPermit2PayloadSpender                                        X402SettleErrorReason = "invalid_exact_evm_permit2_payload_spender"
+	X402SettleErrorReasonInvalidExactEvmPermit2PayloadValidAfter                                     X402SettleErrorReason = "invalid_exact_evm_permit2_payload_valid_after"
 	X402SettleErrorReasonInvalidExactSvmPayloadTransaction                                           X402SettleErrorReason = "invalid_exact_svm_payload_transaction"
 	X402SettleErrorReasonInvalidExactSvmPayloadTransactionAmountMismatch                             X402SettleErrorReason = "invalid_exact_svm_payload_transaction_amount_mismatch"
 	X402SettleErrorReasonInvalidExactSvmPayloadTransactionCannotDeriveReceiverAta                    X402SettleErrorReason = "invalid_exact_svm_payload_transaction_cannot_derive_receiver_ata"
@@ -663,8 +721,10 @@ const (
 const (
 	X402SupportedPaymentKindNetworkBase                                   X402SupportedPaymentKindNetwork = "base"
 	X402SupportedPaymentKindNetworkBaseSepolia                            X402SupportedPaymentKindNetwork = "base-sepolia"
+	X402SupportedPaymentKindNetworkEip155137                              X402SupportedPaymentKindNetwork = "eip155:137"
 	X402SupportedPaymentKindNetworkEip1558453                             X402SupportedPaymentKindNetwork = "eip155:8453"
 	X402SupportedPaymentKindNetworkEip15584532                            X402SupportedPaymentKindNetwork = "eip155:84532"
+	X402SupportedPaymentKindNetworkPolygon                                X402SupportedPaymentKindNetwork = "polygon"
 	X402SupportedPaymentKindNetworkSolana                                 X402SupportedPaymentKindNetwork = "solana"
 	X402SupportedPaymentKindNetworkSolana5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp X402SupportedPaymentKindNetwork = "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
 	X402SupportedPaymentKindNetworkSolanaDevnet                           X402SupportedPaymentKindNetwork = "solana-devnet"
@@ -680,6 +740,7 @@ const (
 const (
 	X402V1PaymentPayloadNetworkBase         X402V1PaymentPayloadNetwork = "base"
 	X402V1PaymentPayloadNetworkBaseSepolia  X402V1PaymentPayloadNetwork = "base-sepolia"
+	X402V1PaymentPayloadNetworkPolygon      X402V1PaymentPayloadNetwork = "polygon"
 	X402V1PaymentPayloadNetworkSolana       X402V1PaymentPayloadNetwork = "solana"
 	X402V1PaymentPayloadNetworkSolanaDevnet X402V1PaymentPayloadNetwork = "solana-devnet"
 )
@@ -693,6 +754,7 @@ const (
 const (
 	X402V1PaymentRequirementsNetworkBase         X402V1PaymentRequirementsNetwork = "base"
 	X402V1PaymentRequirementsNetworkBaseSepolia  X402V1PaymentRequirementsNetwork = "base-sepolia"
+	X402V1PaymentRequirementsNetworkPolygon      X402V1PaymentRequirementsNetwork = "polygon"
 	X402V1PaymentRequirementsNetworkSolana       X402V1PaymentRequirementsNetwork = "solana"
 	X402V1PaymentRequirementsNetworkSolanaDevnet X402V1PaymentRequirementsNetwork = "solana-devnet"
 )
@@ -719,6 +781,13 @@ const (
 	X402VerifyInvalidReasonInvalidExactEvmPayloadAuthorizationValueTooLow                              X402VerifyInvalidReason = "invalid_exact_evm_payload_authorization_value_too_low"
 	X402VerifyInvalidReasonInvalidExactEvmPayloadSignature                                             X402VerifyInvalidReason = "invalid_exact_evm_payload_signature"
 	X402VerifyInvalidReasonInvalidExactEvmPayloadSignatureAddress                                      X402VerifyInvalidReason = "invalid_exact_evm_payload_signature_address"
+	X402VerifyInvalidReasonInvalidExactEvmPermit2PayloadAllowanceRequired                              X402VerifyInvalidReason = "invalid_exact_evm_permit2_payload_allowance_required"
+	X402VerifyInvalidReasonInvalidExactEvmPermit2PayloadAmount                                         X402VerifyInvalidReason = "invalid_exact_evm_permit2_payload_amount"
+	X402VerifyInvalidReasonInvalidExactEvmPermit2PayloadDeadline                                       X402VerifyInvalidReason = "invalid_exact_evm_permit2_payload_deadline"
+	X402VerifyInvalidReasonInvalidExactEvmPermit2PayloadRecipient                                      X402VerifyInvalidReason = "invalid_exact_evm_permit2_payload_recipient"
+	X402VerifyInvalidReasonInvalidExactEvmPermit2PayloadSignature                                      X402VerifyInvalidReason = "invalid_exact_evm_permit2_payload_signature"
+	X402VerifyInvalidReasonInvalidExactEvmPermit2PayloadSpender                                        X402VerifyInvalidReason = "invalid_exact_evm_permit2_payload_spender"
+	X402VerifyInvalidReasonInvalidExactEvmPermit2PayloadValidAfter                                     X402VerifyInvalidReason = "invalid_exact_evm_permit2_payload_valid_after"
 	X402VerifyInvalidReasonInvalidExactSvmPayloadTransaction                                           X402VerifyInvalidReason = "invalid_exact_svm_payload_transaction"
 	X402VerifyInvalidReasonInvalidExactSvmPayloadTransactionAmountMismatch                             X402VerifyInvalidReason = "invalid_exact_svm_payload_transaction_amount_mismatch"
 	X402VerifyInvalidReasonInvalidExactSvmPayloadTransactionCannotDeriveReceiverAta                    X402VerifyInvalidReason = "invalid_exact_svm_payload_transaction_cannot_derive_receiver_ata"
@@ -779,9 +848,9 @@ const (
 
 // Defines values for RequestEvmFaucetJSONBodyNetwork.
 const (
-	BaseSepolia     RequestEvmFaucetJSONBodyNetwork = "base-sepolia"
-	EthereumHoodi   RequestEvmFaucetJSONBodyNetwork = "ethereum-hoodi"
-	EthereumSepolia RequestEvmFaucetJSONBodyNetwork = "ethereum-sepolia"
+	RequestEvmFaucetJSONBodyNetworkBaseSepolia     RequestEvmFaucetJSONBodyNetwork = "base-sepolia"
+	RequestEvmFaucetJSONBodyNetworkEthereumHoodi   RequestEvmFaucetJSONBodyNetwork = "ethereum-hoodi"
+	RequestEvmFaucetJSONBodyNetworkEthereumSepolia RequestEvmFaucetJSONBodyNetwork = "ethereum-sepolia"
 )
 
 // Defines values for RequestEvmFaucetJSONBodyToken.
@@ -1385,6 +1454,26 @@ type EvmDataParameterConditionList struct {
 // EvmDataParameterConditionListOperator The operator to use for the comparison. The value resolved at the `name` will be on the left-hand side of the operator, and the `values` field will be on the right-hand side.
 type EvmDataParameterConditionListOperator string
 
+// EvmEip7702DelegationNetwork The network for the EIP-7702 delegation.
+type EvmEip7702DelegationNetwork string
+
+// EvmEip7702DelegationStatus The EIP-7702 delegation status for an EVM account.
+type EvmEip7702DelegationStatus struct {
+	// DelegateAddress The address the account has delegated to, if any. Only present when the account has an active delegation.
+	DelegateAddress *string `json:"delegateAddress,omitempty"`
+
+	// Network The network for the EIP-7702 delegation.
+	Network EvmEip7702DelegationNetwork `json:"network"`
+
+	// Status The current delegation state of the account.
+	// CURRENT means the account is fully delegated and initialized. NOT_DELEGATED means the account has no active EIP-7702 delegation. WRONG_PROXY means the account is delegated to an unexpected proxy contract. NOT_INITIALIZED means the account is delegated to the correct proxy but has not been initialized.
+	Status EvmEip7702DelegationStatusStatus `json:"status"`
+}
+
+// EvmEip7702DelegationStatusStatus The current delegation state of the account.
+// CURRENT means the account is fully delegated and initialized. NOT_DELEGATED means the account has no active EIP-7702 delegation. WRONG_PROXY means the account is delegated to an unexpected proxy contract. NOT_INITIALIZED means the account is delegated to the correct proxy but has not been initialized.
+type EvmEip7702DelegationStatusStatus string
+
 // EvmMessageCriterion A schema for specifying a criterion for the message being signed.
 type EvmMessageCriterion struct {
 	// Match A regular expression the message is matched against. Accepts valid regular expression syntax described by [RE2](https://github.com/google/re2/wiki/Syntax).
@@ -1787,6 +1876,15 @@ type OnchainDataResult struct {
 // OnchainDataResultSchemaColumnsType Column data type (ClickHouse types).
 type OnchainDataResultSchemaColumnsType string
 
+// OnrampLimitType The type of limit:
+//   - `weekly_spending`: Rolling 7-day spending limit. The limit applies to the sum of all completed transactions
+//     within a sliding 168-hour (7-day) window. As time passes, older transactions naturally expire from the window.
+//     $500 is the default limit.
+//   - `lifetime_transactions`: All-time transaction count limit. Tracks the total number of completed transactions
+//     across the user's entire history with no time-based expiration. Once the limit is reached, no further
+//     transactions are allowed. 15 is the default limit.
+type OnrampLimitType string
+
 // OnrampOrder An Onramp order.
 type OnrampOrder struct {
 	// CreatedAt The date and time the order was created.
@@ -1907,6 +2005,31 @@ type OnrampQuotePaymentMethodTypeId string
 type OnrampSession struct {
 	// OnrampUrl Ready-to-use onramp URL.
 	OnrampUrl Url `json:"onrampUrl"`
+}
+
+// OnrampUserIdType The type of user identifier:
+// - `phone_number`: A phone number in E.164 format associated with an onramp user.
+type OnrampUserIdType string
+
+// OnrampUserLimit A single limit with remaining capacity.
+type OnrampUserLimit struct {
+	// Currency The currency of the limit amounts. Only present for spending limits, not for count-based limits.
+	Currency *string `json:"currency,omitempty"`
+
+	// Limit The maximum limit value.
+	Limit string `json:"limit"`
+
+	// LimitType The type of limit:
+	// - `weekly_spending`: Rolling 7-day spending limit. The limit applies to the sum of all completed transactions
+	//   within a sliding 168-hour (7-day) window. As time passes, older transactions naturally expire from the window.
+	//   $500 is the default limit.
+	// - `lifetime_transactions`: All-time transaction count limit. Tracks the total number of completed transactions
+	//   across the user's entire history with no time-based expiration. Once the limit is reached, no further
+	//   transactions are allowed. 15 is the default limit.
+	LimitType OnrampLimitType `json:"limitType"`
+
+	// Remaining The remaining amount or count available.
+	Remaining string `json:"remaining"`
 }
 
 // Policy defines model for Policy.
@@ -2570,6 +2693,30 @@ type SwapUnavailableResponse struct {
 // SwapUnavailableResponseLiquidityAvailable Whether sufficient liquidity is available to settle the swap. All other fields in the response will be empty if this is false.
 type SwapUnavailableResponseLiquidityAvailable bool
 
+// TelegramAuthentication Information about an end user who authenticates using Telegram.
+type TelegramAuthentication struct {
+	// AuthDate The Telegram user's last login as a Unix timestamp.
+	AuthDate int `json:"authDate"`
+
+	// FirstName The Telegram user's first name.
+	FirstName *string `json:"firstName,omitempty"`
+
+	// Id The Telegram ID for the end user.
+	Id int `json:"id"`
+
+	// LastName The Telegram user's last name.
+	LastName *string `json:"lastName,omitempty"`
+
+	// PhotoUrl The Telegram user's profile picture.
+	PhotoUrl *string `json:"photoUrl,omitempty"`
+
+	// Type The type of OAuth2 provider.
+	Type OAuth2ProviderType `json:"type"`
+
+	// Username The Telegram user's username.
+	Username *string `json:"username,omitempty"`
+}
+
 // Token General information about a token. Includes the type, the network, and other identifying information.
 type Token struct {
 	// ContractAddress The contract address of the token.
@@ -2806,7 +2953,7 @@ type X402ExactEvmPayload struct {
 		// From The 0x-prefixed, checksum EVM address of the sender of the payment.
 		From string `json:"from"`
 
-		// Nonce The hex-encoded nonce of the payment.
+		// Nonce The hex-encoded nonce of the payment (bytes32).
 		Nonce string `json:"nonce"`
 
 		// To The 0x-prefixed, checksum EVM address of the recipient of the payment.
@@ -2822,7 +2969,49 @@ type X402ExactEvmPayload struct {
 		Value string `json:"value"`
 	} `json:"authorization"`
 
-	// Signature The EIP-712 hex-encoded signature of the ERC-3009 authorization message.
+	// Signature The EIP-712 hex-encoded signature of the ERC-3009 authorization message. Smart account signatures may be longer than 65 bytes.
+	Signature string `json:"signature"`
+}
+
+// X402ExactEvmPermit2Payload The x402 protocol exact scheme payload for EVM networks using Permit2. Permit2 is a universal token approval mechanism that works with any ERC-20 token, unlike ERC-3009 which requires token-level support.
+type X402ExactEvmPermit2Payload struct {
+	// Permit2Authorization The authorization data for the Permit2 PermitWitnessTransferFrom message.
+	Permit2Authorization struct {
+		// Deadline The unix timestamp before which the permit is valid.
+		Deadline string `json:"deadline"`
+
+		// From The 0x-prefixed, checksum EVM address of the sender of the payment.
+		From string `json:"from"`
+
+		// Nonce The Permit2 nonce as a decimal string (uint256).
+		Nonce string `json:"nonce"`
+
+		// Permitted The token permissions for the transfer.
+		Permitted struct {
+			// Amount The amount to transfer in atomic units.
+			Amount string `json:"amount"`
+
+			// Token The 0x-prefixed, checksum EVM address of the token to transfer.
+			Token string `json:"token"`
+		} `json:"permitted"`
+
+		// Spender The 0x-prefixed, checksum EVM address of the spender (x402 Permit2 proxy contract).
+		Spender string `json:"spender"`
+
+		// Witness The witness data containing payment details.
+		Witness struct {
+			// Extra Optional hex-encoded extra data.
+			Extra *string `json:"extra,omitempty"`
+
+			// To The 0x-prefixed, checksum EVM address of the recipient.
+			To string `json:"to"`
+
+			// ValidAfter The unix timestamp after which the payment is valid.
+			ValidAfter string `json:"validAfter"`
+		} `json:"witness"`
+	} `json:"permit2Authorization"`
+
+	// Signature The EIP-712 hex-encoded signature of the Permit2 PermitWitnessTransferFrom message. Smart account signatures may be longer than 65 bytes.
 	Signature string `json:"signature"`
 }
 
@@ -2833,6 +3022,7 @@ type X402ExactSolanaPayload struct {
 }
 
 // X402PaymentPayload The x402 protocol payment payload that the client attaches to x402-paid API requests to the resource server in the X-PAYMENT header.
+// For EVM networks, smart account signatures can be longer than 65 bytes.
 type X402PaymentPayload struct {
 	union json.RawMessage
 }
@@ -3236,7 +3426,7 @@ type CreateEndUserParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3270,7 +3460,7 @@ type ImportEndUserParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3289,7 +3479,7 @@ type AddEndUserEvmAccountParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3308,7 +3498,7 @@ type AddEndUserEvmSmartAccountParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3324,7 +3514,7 @@ type AddEndUserSolanaAccountParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3357,7 +3547,7 @@ type CreateEvmAccountParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3376,7 +3566,7 @@ type ExportEvmAccountByNameParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3403,7 +3593,7 @@ type ImportEvmAccountParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3422,7 +3612,35 @@ type UpdateEvmAccountJSONBody struct {
 
 // UpdateEvmAccountParams defines parameters for UpdateEvmAccount.
 type UpdateEvmAccountParams struct {
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
+	// When included, duplicate requests with the same key will return identical responses.
+	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
+	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
+}
+
+// GetEvmEip7702DelegationStatusParams defines parameters for GetEvmEip7702DelegationStatus.
+type GetEvmEip7702DelegationStatusParams struct {
+	// Network The network to query the delegation status on.
+	Network EvmEip7702DelegationNetwork `form:"network" json:"network"`
+}
+
+// CreateEvmEip7702DelegationJSONBody defines parameters for CreateEvmEip7702Delegation.
+type CreateEvmEip7702DelegationJSONBody struct {
+	// EnableSpendPermissions Whether to configure spend permissions for the upgraded, delegated account. When enabled, the account can grant permissions for third parties to spend on its behalf.
+	EnableSpendPermissions *bool `json:"enableSpendPermissions,omitempty"`
+
+	// Network The network for the EIP-7702 delegation.
+	Network EvmEip7702DelegationNetwork `json:"network"`
+}
+
+// CreateEvmEip7702DelegationParams defines parameters for CreateEvmEip7702Delegation.
+type CreateEvmEip7702DelegationParams struct {
+	// XWalletAuth A JWT signed using your Wallet Secret, encoded in base64. Refer to the
+	// [Generate Wallet Token](https://docs.cdp.coinbase.com/api-reference/v2/authentication#2-generate-wallet-token)
+	// section of our Authentication docs for more details on how to generate your Wallet Token.
+	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
+
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3441,7 +3659,7 @@ type ExportEvmAccountParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3463,7 +3681,7 @@ type SendEvmTransactionParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3485,7 +3703,7 @@ type SignEvmHashParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3504,7 +3722,7 @@ type SignEvmMessageParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3523,7 +3741,7 @@ type SignEvmTransactionParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3536,7 +3754,7 @@ type SignEvmTypedDataParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3582,7 +3800,7 @@ type CreateEvmSmartAccountJSONBody struct {
 
 // CreateEvmSmartAccountParams defines parameters for CreateEvmSmartAccount.
 type CreateEvmSmartAccountParams struct {
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3603,7 +3821,7 @@ type CreateSpendPermissionParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3625,7 +3843,7 @@ type RevokeSpendPermissionParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3660,7 +3878,7 @@ type PrepareAndSendUserOperationJSONBody struct {
 
 // PrepareAndSendUserOperationParams defines parameters for PrepareAndSendUserOperation.
 type PrepareAndSendUserOperationParams struct {
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3706,7 +3924,7 @@ type CreateEvmSwapQuoteJSONBody struct {
 
 // CreateEvmSwapQuoteParams defines parameters for CreateEvmSwapQuote.
 type CreateEvmSwapQuoteParams struct {
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3731,6 +3949,19 @@ type ListEvmTokenBalancesParams struct {
 
 	// PageToken The token for the next page of resources, if any.
 	PageToken *PageToken `form:"pageToken,omitempty" json:"pageToken,omitempty"`
+}
+
+// GetOnrampUserLimitsJSONBody defines parameters for GetOnrampUserLimits.
+type GetOnrampUserLimitsJSONBody struct {
+	// PaymentMethodType The type of payment method to be used to complete an onramp order.
+	PaymentMethodType OnrampOrderPaymentMethodTypeId `json:"paymentMethodType"`
+
+	// UserId The user identifier value. For `phone_number` type, this must be in E.164 format.
+	UserId string `json:"userId"`
+
+	// UserIdType The type of user identifier:
+	// - `phone_number`: A phone number in E.164 format associated with an onramp user.
+	UserIdType OnrampUserIdType `json:"userIdType"`
 }
 
 // CreateOnrampOrderJSONBody defines parameters for CreateOnrampOrder.
@@ -3867,7 +4098,7 @@ type CreatePolicyJSONBody struct {
 
 // CreatePolicyParams defines parameters for CreatePolicy.
 type CreatePolicyParams struct {
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3878,7 +4109,7 @@ type CreatePolicyJSONBodyScope string
 
 // DeletePolicyParams defines parameters for DeletePolicy.
 type DeletePolicyParams struct {
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3896,7 +4127,7 @@ type UpdatePolicyJSONBody struct {
 
 // UpdatePolicyParams defines parameters for UpdatePolicy.
 type UpdatePolicyParams struct {
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3929,7 +4160,7 @@ type CreateSolanaAccountParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3948,7 +4179,7 @@ type ExportSolanaAccountByNameParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3972,7 +4203,7 @@ type ImportSolanaAccountParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -3994,7 +4225,7 @@ type SendSolanaTransactionParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -4015,7 +4246,7 @@ type UpdateSolanaAccountJSONBody struct {
 
 // UpdateSolanaAccountParams defines parameters for UpdateSolanaAccount.
 type UpdateSolanaAccountParams struct {
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -4034,7 +4265,7 @@ type ExportSolanaAccountParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -4053,7 +4284,7 @@ type SignSolanaMessageParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -4072,7 +4303,7 @@ type SignSolanaTransactionParams struct {
 	// section of our Authentication docs for more details on how to generate your Wallet Token.
 	XWalletAuth *XWalletAuth `json:"X-Wallet-Auth,omitempty"`
 
-	// XIdempotencyKey An optional [UUID v4](https://www.uuidgenerator.net/version4) request header for making requests safely retryable.
+	// XIdempotencyKey An optional string request header for making requests safely retryable.
 	// When included, duplicate requests with the same key will return identical responses.
 	// Refer to our [Idempotency docs](https://docs.cdp.coinbase.com/api-reference/v2/idempotency) for more information on using idempotency keys.
 	XIdempotencyKey *IdempotencyKey `json:"X-Idempotency-Key,omitempty"`
@@ -4102,6 +4333,7 @@ type ListSolanaTokenBalancesParams struct {
 // SettleX402PaymentJSONBody defines parameters for SettleX402Payment.
 type SettleX402PaymentJSONBody struct {
 	// PaymentPayload The x402 protocol payment payload that the client attaches to x402-paid API requests to the resource server in the X-PAYMENT header.
+	// For EVM networks, smart account signatures can be longer than 65 bytes.
 	PaymentPayload X402PaymentPayload `json:"paymentPayload"`
 
 	// PaymentRequirements The x402 protocol payment requirements that the resource server expects the client's payment payload to meet.
@@ -4114,6 +4346,7 @@ type SettleX402PaymentJSONBody struct {
 // VerifyX402PaymentJSONBody defines parameters for VerifyX402Payment.
 type VerifyX402PaymentJSONBody struct {
 	// PaymentPayload The x402 protocol payment payload that the client attaches to x402-paid API requests to the resource server in the X-PAYMENT header.
+	// For EVM networks, smart account signatures can be longer than 65 bytes.
 	PaymentPayload X402PaymentPayload `json:"paymentPayload"`
 
 	// PaymentRequirements The x402 protocol payment requirements that the resource server expects the client's payment payload to meet.
@@ -4162,6 +4395,9 @@ type ImportEvmAccountJSONRequestBody ImportEvmAccountJSONBody
 // UpdateEvmAccountJSONRequestBody defines body for UpdateEvmAccount for application/json ContentType.
 type UpdateEvmAccountJSONRequestBody UpdateEvmAccountJSONBody
 
+// CreateEvmEip7702DelegationJSONRequestBody defines body for CreateEvmEip7702Delegation for application/json ContentType.
+type CreateEvmEip7702DelegationJSONRequestBody CreateEvmEip7702DelegationJSONBody
+
 // ExportEvmAccountJSONRequestBody defines body for ExportEvmAccount for application/json ContentType.
 type ExportEvmAccountJSONRequestBody ExportEvmAccountJSONBody
 
@@ -4206,6 +4442,9 @@ type SendUserOperationJSONRequestBody SendUserOperationJSONBody
 
 // CreateEvmSwapQuoteJSONRequestBody defines body for CreateEvmSwapQuote for application/json ContentType.
 type CreateEvmSwapQuoteJSONRequestBody CreateEvmSwapQuoteJSONBody
+
+// GetOnrampUserLimitsJSONRequestBody defines body for GetOnrampUserLimits for application/json ContentType.
+type GetOnrampUserLimitsJSONRequestBody GetOnrampUserLimitsJSONBody
 
 // CreateOnrampOrderJSONRequestBody defines body for CreateOnrampOrder for application/json ContentType.
 type CreateOnrampOrderJSONRequestBody CreateOnrampOrderJSONBody
@@ -4476,6 +4715,32 @@ func (t *AuthenticationMethod) FromOAuth2Authentication(v OAuth2Authentication) 
 
 // MergeOAuth2Authentication performs a merge with any union data inside the AuthenticationMethod, using the provided OAuth2Authentication
 func (t *AuthenticationMethod) MergeOAuth2Authentication(v OAuth2Authentication) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JsonMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsTelegramAuthentication returns the union data inside the AuthenticationMethod as a TelegramAuthentication
+func (t AuthenticationMethod) AsTelegramAuthentication() (TelegramAuthentication, error) {
+	var body TelegramAuthentication
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromTelegramAuthentication overwrites any union data inside the AuthenticationMethod as the provided TelegramAuthentication
+func (t *AuthenticationMethod) FromTelegramAuthentication(v TelegramAuthentication) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeTelegramAuthentication performs a merge with any union data inside the AuthenticationMethod, using the provided TelegramAuthentication
+func (t *AuthenticationMethod) MergeTelegramAuthentication(v TelegramAuthentication) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -6428,6 +6693,32 @@ func (t *X402V1PaymentPayload_Payload) MergeX402ExactEvmPayload(v X402ExactEvmPa
 	return err
 }
 
+// AsX402ExactEvmPermit2Payload returns the union data inside the X402V1PaymentPayload_Payload as a X402ExactEvmPermit2Payload
+func (t X402V1PaymentPayload_Payload) AsX402ExactEvmPermit2Payload() (X402ExactEvmPermit2Payload, error) {
+	var body X402ExactEvmPermit2Payload
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromX402ExactEvmPermit2Payload overwrites any union data inside the X402V1PaymentPayload_Payload as the provided X402ExactEvmPermit2Payload
+func (t *X402V1PaymentPayload_Payload) FromX402ExactEvmPermit2Payload(v X402ExactEvmPermit2Payload) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeX402ExactEvmPermit2Payload performs a merge with any union data inside the X402V1PaymentPayload_Payload, using the provided X402ExactEvmPermit2Payload
+func (t *X402V1PaymentPayload_Payload) MergeX402ExactEvmPermit2Payload(v X402ExactEvmPermit2Payload) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JsonMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsX402ExactSolanaPayload returns the union data inside the X402V1PaymentPayload_Payload as a X402ExactSolanaPayload
 func (t X402V1PaymentPayload_Payload) AsX402ExactSolanaPayload() (X402ExactSolanaPayload, error) {
 	var body X402ExactSolanaPayload
@@ -6480,6 +6771,32 @@ func (t *X402V2PaymentPayload_Payload) FromX402ExactEvmPayload(v X402ExactEvmPay
 
 // MergeX402ExactEvmPayload performs a merge with any union data inside the X402V2PaymentPayload_Payload, using the provided X402ExactEvmPayload
 func (t *X402V2PaymentPayload_Payload) MergeX402ExactEvmPayload(v X402ExactEvmPayload) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JsonMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsX402ExactEvmPermit2Payload returns the union data inside the X402V2PaymentPayload_Payload as a X402ExactEvmPermit2Payload
+func (t X402V2PaymentPayload_Payload) AsX402ExactEvmPermit2Payload() (X402ExactEvmPermit2Payload, error) {
+	var body X402ExactEvmPermit2Payload
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromX402ExactEvmPermit2Payload overwrites any union data inside the X402V2PaymentPayload_Payload as the provided X402ExactEvmPermit2Payload
+func (t *X402V2PaymentPayload_Payload) FromX402ExactEvmPermit2Payload(v X402ExactEvmPermit2Payload) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeX402ExactEvmPermit2Payload performs a merge with any union data inside the X402V2PaymentPayload_Payload, using the provided X402ExactEvmPermit2Payload
+func (t *X402V2PaymentPayload_Payload) MergeX402ExactEvmPermit2Payload(v X402ExactEvmPermit2Payload) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -6697,6 +7014,14 @@ type ClientInterface interface {
 
 	UpdateEvmAccount(ctx context.Context, address string, params *UpdateEvmAccountParams, body UpdateEvmAccountJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GetEvmEip7702DelegationStatus request
+	GetEvmEip7702DelegationStatus(ctx context.Context, address string, params *GetEvmEip7702DelegationStatusParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateEvmEip7702DelegationWithBody request with any body
+	CreateEvmEip7702DelegationWithBody(ctx context.Context, address string, params *CreateEvmEip7702DelegationParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	CreateEvmEip7702Delegation(ctx context.Context, address string, params *CreateEvmEip7702DelegationParams, body CreateEvmEip7702DelegationJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// ExportEvmAccountWithBody request with any body
 	ExportEvmAccountWithBody(ctx context.Context, address string, params *ExportEvmAccountParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -6792,6 +7117,11 @@ type ClientInterface interface {
 
 	// ListEvmTokenBalances request
 	ListEvmTokenBalances(ctx context.Context, network ListEvmTokenBalancesNetwork, address string, params *ListEvmTokenBalancesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetOnrampUserLimitsWithBody request with any body
+	GetOnrampUserLimitsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	GetOnrampUserLimits(ctx context.Context, body GetOnrampUserLimitsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CreateOnrampOrderWithBody request with any body
 	CreateOnrampOrderWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -7340,6 +7670,42 @@ func (c *CDPClient) UpdateEvmAccount(ctx context.Context, address string, params
 	return c.Client.Do(req)
 }
 
+func (c *CDPClient) GetEvmEip7702DelegationStatus(ctx context.Context, address string, params *GetEvmEip7702DelegationStatusParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetEvmEip7702DelegationStatusRequest(c.Server, address, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *CDPClient) CreateEvmEip7702DelegationWithBody(ctx context.Context, address string, params *CreateEvmEip7702DelegationParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateEvmEip7702DelegationRequestWithBody(c.Server, address, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *CDPClient) CreateEvmEip7702Delegation(ctx context.Context, address string, params *CreateEvmEip7702DelegationParams, body CreateEvmEip7702DelegationJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateEvmEip7702DelegationRequest(c.Server, address, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *CDPClient) ExportEvmAccountWithBody(ctx context.Context, address string, params *ExportEvmAccountParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewExportEvmAccountRequestWithBody(c.Server, address, params, contentType, body)
 	if err != nil {
@@ -7774,6 +8140,30 @@ func (c *CDPClient) GetEvmSwapPrice(ctx context.Context, params *GetEvmSwapPrice
 
 func (c *CDPClient) ListEvmTokenBalances(ctx context.Context, network ListEvmTokenBalancesNetwork, address string, params *ListEvmTokenBalancesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewListEvmTokenBalancesRequest(c.Server, network, address, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *CDPClient) GetOnrampUserLimitsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetOnrampUserLimitsRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *CDPClient) GetOnrampUserLimits(ctx context.Context, body GetOnrampUserLimitsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetOnrampUserLimitsRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -9565,6 +9955,131 @@ func NewUpdateEvmAccountRequestWithBody(server string, address string, params *U
 	return req, nil
 }
 
+// NewGetEvmEip7702DelegationStatusRequest generates requests for GetEvmEip7702DelegationStatus
+func NewGetEvmEip7702DelegationStatusRequest(server string, address string, params *GetEvmEip7702DelegationStatusParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "address", runtime.ParamLocationPath, address)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/evm/accounts/%s/eip7702/delegation", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "network", runtime.ParamLocationQuery, params.Network); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
+				}
+			}
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreateEvmEip7702DelegationRequest calls the generic CreateEvmEip7702Delegation builder with application/json body
+func NewCreateEvmEip7702DelegationRequest(server string, address string, params *CreateEvmEip7702DelegationParams, body CreateEvmEip7702DelegationJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateEvmEip7702DelegationRequestWithBody(server, address, params, "application/json", bodyReader)
+}
+
+// NewCreateEvmEip7702DelegationRequestWithBody generates requests for CreateEvmEip7702Delegation with any type of body
+func NewCreateEvmEip7702DelegationRequestWithBody(server string, address string, params *CreateEvmEip7702DelegationParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "address", runtime.ParamLocationPath, address)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/evm/accounts/%s/eip7702/delegation", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		if params.XWalletAuth != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "X-Wallet-Auth", runtime.ParamLocationHeader, *params.XWalletAuth)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("X-Wallet-Auth", headerParam0)
+		}
+
+		if params.XIdempotencyKey != nil {
+			var headerParam1 string
+
+			headerParam1, err = runtime.StyleParamWithLocation("simple", false, "X-Idempotency-Key", runtime.ParamLocationHeader, *params.XIdempotencyKey)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("X-Idempotency-Key", headerParam1)
+		}
+
+	}
+
+	return req, nil
+}
+
 // NewExportEvmAccountRequest calls the generic ExportEvmAccount builder with application/json body
 func NewExportEvmAccountRequest(server string, address string, params *ExportEvmAccountParams, body ExportEvmAccountJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -10982,6 +11497,46 @@ func NewListEvmTokenBalancesRequest(server string, network ListEvmTokenBalancesN
 	if err != nil {
 		return nil, err
 	}
+
+	return req, nil
+}
+
+// NewGetOnrampUserLimitsRequest calls the generic GetOnrampUserLimits builder with application/json body
+func NewGetOnrampUserLimitsRequest(server string, body GetOnrampUserLimitsJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGetOnrampUserLimitsRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewGetOnrampUserLimitsRequestWithBody generates requests for GetOnrampUserLimits with any type of body
+func NewGetOnrampUserLimitsRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/onramp/limits")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -12433,6 +12988,14 @@ type ClientWithResponsesInterface interface {
 
 	UpdateEvmAccountWithResponse(ctx context.Context, address string, params *UpdateEvmAccountParams, body UpdateEvmAccountJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateEvmAccountResponse, error)
 
+	// GetEvmEip7702DelegationStatusWithResponse request
+	GetEvmEip7702DelegationStatusWithResponse(ctx context.Context, address string, params *GetEvmEip7702DelegationStatusParams, reqEditors ...RequestEditorFn) (*GetEvmEip7702DelegationStatusResponse, error)
+
+	// CreateEvmEip7702DelegationWithBodyWithResponse request with any body
+	CreateEvmEip7702DelegationWithBodyWithResponse(ctx context.Context, address string, params *CreateEvmEip7702DelegationParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateEvmEip7702DelegationResponse, error)
+
+	CreateEvmEip7702DelegationWithResponse(ctx context.Context, address string, params *CreateEvmEip7702DelegationParams, body CreateEvmEip7702DelegationJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateEvmEip7702DelegationResponse, error)
+
 	// ExportEvmAccountWithBodyWithResponse request with any body
 	ExportEvmAccountWithBodyWithResponse(ctx context.Context, address string, params *ExportEvmAccountParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ExportEvmAccountResponse, error)
 
@@ -12528,6 +13091,11 @@ type ClientWithResponsesInterface interface {
 
 	// ListEvmTokenBalancesWithResponse request
 	ListEvmTokenBalancesWithResponse(ctx context.Context, network ListEvmTokenBalancesNetwork, address string, params *ListEvmTokenBalancesParams, reqEditors ...RequestEditorFn) (*ListEvmTokenBalancesResponse, error)
+
+	// GetOnrampUserLimitsWithBodyWithResponse request with any body
+	GetOnrampUserLimitsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetOnrampUserLimitsResponse, error)
+
+	GetOnrampUserLimitsWithResponse(ctx context.Context, body GetOnrampUserLimitsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetOnrampUserLimitsResponse, error)
 
 	// CreateOnrampOrderWithBodyWithResponse request with any body
 	CreateOnrampOrderWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateOnrampOrderResponse, error)
@@ -13321,6 +13889,67 @@ func (r UpdateEvmAccountResponse) StatusCode() int {
 	return 0
 }
 
+type GetEvmEip7702DelegationStatusResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *EvmEip7702DelegationStatus
+	JSON400      *Error
+	JSON404      *Error
+	JSON500      *InternalServerError
+	JSON502      *BadGatewayError
+	JSON503      *ServiceUnavailableError
+}
+
+// Status returns HTTPResponse.Status
+func (r GetEvmEip7702DelegationStatusResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetEvmEip7702DelegationStatusResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CreateEvmEip7702DelegationResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON201      *struct {
+		// TransactionHash The hash of the Type 4 transaction that was submitted.
+		TransactionHash string `json:"transactionHash"`
+	}
+	JSON400 *Error
+	JSON401 *UnauthorizedError
+	JSON402 *PaymentMethodRequiredError
+	JSON404 *Error
+	JSON409 *Error
+	JSON422 *IdempotencyError
+	JSON500 *InternalServerError
+	JSON502 *BadGatewayError
+	JSON503 *ServiceUnavailableError
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateEvmEip7702DelegationResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateEvmEip7702DelegationResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type ExportEvmAccountResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -13981,6 +14610,35 @@ func (r ListEvmTokenBalancesResponse) Status() string {
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r ListEvmTokenBalancesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetOnrampUserLimitsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *struct {
+		// Limits The list of limits applicable to the user.
+		Limits []OnrampUserLimit `json:"limits"`
+	}
+	JSON400 *Error
+	JSON401 *UnauthorizedError
+	JSON429 *RateLimitExceeded
+	JSON500 *InternalServerError
+}
+
+// Status returns HTTPResponse.Status
+func (r GetOnrampUserLimitsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetOnrampUserLimitsResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -15028,6 +15686,32 @@ func (c *ClientWithResponses) UpdateEvmAccountWithResponse(ctx context.Context, 
 	return ParseUpdateEvmAccountResponse(rsp)
 }
 
+// GetEvmEip7702DelegationStatusWithResponse request returning *GetEvmEip7702DelegationStatusResponse
+func (c *ClientWithResponses) GetEvmEip7702DelegationStatusWithResponse(ctx context.Context, address string, params *GetEvmEip7702DelegationStatusParams, reqEditors ...RequestEditorFn) (*GetEvmEip7702DelegationStatusResponse, error) {
+	rsp, err := c.GetEvmEip7702DelegationStatus(ctx, address, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetEvmEip7702DelegationStatusResponse(rsp)
+}
+
+// CreateEvmEip7702DelegationWithBodyWithResponse request with arbitrary body returning *CreateEvmEip7702DelegationResponse
+func (c *ClientWithResponses) CreateEvmEip7702DelegationWithBodyWithResponse(ctx context.Context, address string, params *CreateEvmEip7702DelegationParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateEvmEip7702DelegationResponse, error) {
+	rsp, err := c.CreateEvmEip7702DelegationWithBody(ctx, address, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateEvmEip7702DelegationResponse(rsp)
+}
+
+func (c *ClientWithResponses) CreateEvmEip7702DelegationWithResponse(ctx context.Context, address string, params *CreateEvmEip7702DelegationParams, body CreateEvmEip7702DelegationJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateEvmEip7702DelegationResponse, error) {
+	rsp, err := c.CreateEvmEip7702Delegation(ctx, address, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateEvmEip7702DelegationResponse(rsp)
+}
+
 // ExportEvmAccountWithBodyWithResponse request with arbitrary body returning *ExportEvmAccountResponse
 func (c *ClientWithResponses) ExportEvmAccountWithBodyWithResponse(ctx context.Context, address string, params *ExportEvmAccountParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ExportEvmAccountResponse, error) {
 	rsp, err := c.ExportEvmAccountWithBody(ctx, address, params, contentType, body, reqEditors...)
@@ -15344,6 +16028,23 @@ func (c *ClientWithResponses) ListEvmTokenBalancesWithResponse(ctx context.Conte
 		return nil, err
 	}
 	return ParseListEvmTokenBalancesResponse(rsp)
+}
+
+// GetOnrampUserLimitsWithBodyWithResponse request with arbitrary body returning *GetOnrampUserLimitsResponse
+func (c *ClientWithResponses) GetOnrampUserLimitsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetOnrampUserLimitsResponse, error) {
+	rsp, err := c.GetOnrampUserLimitsWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetOnrampUserLimitsResponse(rsp)
+}
+
+func (c *ClientWithResponses) GetOnrampUserLimitsWithResponse(ctx context.Context, body GetOnrampUserLimitsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetOnrampUserLimitsResponse, error) {
+	rsp, err := c.GetOnrampUserLimits(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetOnrampUserLimitsResponse(rsp)
 }
 
 // CreateOnrampOrderWithBodyWithResponse request with arbitrary body returning *CreateOnrampOrderResponse
@@ -17253,6 +17954,159 @@ func ParseUpdateEvmAccountResponse(rsp *http.Response) (*UpdateEvmAccountRespons
 	return response, nil
 }
 
+// ParseGetEvmEip7702DelegationStatusResponse parses an HTTP response from a GetEvmEip7702DelegationStatusWithResponse call
+func ParseGetEvmEip7702DelegationStatusResponse(rsp *http.Response) (*GetEvmEip7702DelegationStatusResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetEvmEip7702DelegationStatusResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest EvmEip7702DelegationStatus
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest Error
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest Error
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BadGatewayError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest ServiceUnavailableError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON503 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateEvmEip7702DelegationResponse parses an HTTP response from a CreateEvmEip7702DelegationWithResponse call
+func ParseCreateEvmEip7702DelegationResponse(rsp *http.Response) (*CreateEvmEip7702DelegationResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateEvmEip7702DelegationResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			// TransactionHash The hash of the Type 4 transaction that was submitted.
+			TransactionHash string `json:"transactionHash"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest Error
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UnauthorizedError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 402:
+		var dest PaymentMethodRequiredError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON402 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest Error
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest Error
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest IdempotencyError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BadGatewayError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest ServiceUnavailableError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON503 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseExportEvmAccountResponse parses an HTTP response from a ExportEvmAccountWithResponse call
 func ParseExportEvmAccountResponse(rsp *http.Response) (*ExportEvmAccountResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -18853,6 +19707,63 @@ func ParseListEvmTokenBalancesResponse(rsp *http.Response) (*ListEvmTokenBalance
 			return nil, err
 		}
 		response.JSON503 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetOnrampUserLimitsResponse parses an HTTP response from a GetOnrampUserLimitsWithResponse call
+func ParseGetOnrampUserLimitsResponse(rsp *http.Response) (*GetOnrampUserLimitsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetOnrampUserLimitsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Limits The list of limits applicable to the user.
+			Limits []OnrampUserLimit `json:"limits"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest Error
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UnauthorizedError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimitExceeded
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalServerError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
 
 	}
 

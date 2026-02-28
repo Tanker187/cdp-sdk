@@ -30,7 +30,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum OnrampOrderPaymentMethodTypeId {
   
-  GUEST_CHECKOUT_APPLE_PAY("GUEST_CHECKOUT_APPLE_PAY");
+  GUEST_CHECKOUT_APPLE_PAY("GUEST_CHECKOUT_APPLE_PAY"),
+  
+  GUEST_CHECKOUT_GOOGLE_PAY("GUEST_CHECKOUT_GOOGLE_PAY");
 
   private String value;
 

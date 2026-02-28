@@ -54,6 +54,10 @@ public enum ErrorType {
   
   PAYMENT_METHOD_REQUIRED("payment_method_required"),
   
+  PAYMENT_REQUIRED("payment_required"),
+  
+  SETTLEMENT_FAILED("settlement_failed"),
+  
   RATE_LIMIT_EXCEEDED("rate_limit_exceeded"),
   
   REQUEST_CANCELED("request_canceled"),
@@ -90,11 +94,37 @@ public enum ErrorType {
   
   TRAVEL_RULES_RECIPIENT_VIOLATION("travel_rules_recipient_violation"),
   
-  TRANSFER_AMOUNT_OUT_OF_BOUNDS("transfer_amount_out_of_bounds"),
+  SOURCE_ACCOUNT_INVALID("source_account_invalid"),
   
-  TRANSFER_RECIPIENT_ADDRESS_INVALID("transfer_recipient_address_invalid"),
+  TARGET_ACCOUNT_INVALID("target_account_invalid"),
   
-  TRANSFER_QUOTE_EXPIRED("transfer_quote_expired"),
+  SOURCE_ACCOUNT_NOT_FOUND("source_account_not_found"),
+  
+  TARGET_ACCOUNT_NOT_FOUND("target_account_not_found"),
+  
+  SOURCE_ASSET_NOT_SUPPORTED("source_asset_not_supported"),
+  
+  TARGET_ASSET_NOT_SUPPORTED("target_asset_not_supported"),
+  
+  TARGET_EMAIL_INVALID("target_email_invalid"),
+  
+  TARGET_ONCHAIN_ADDRESS_INVALID("target_onchain_address_invalid"),
+  
+  TRANSFER_AMOUNT_INVALID("transfer_amount_invalid"),
+  
+  TRANSFER_ASSET_NOT_SUPPORTED("transfer_asset_not_supported"),
+  
+  INSUFFICIENT_BALANCE("insufficient_balance"),
+  
+  METADATA_TOO_MANY_ENTRIES("metadata_too_many_entries"),
+  
+  METADATA_KEY_TOO_LONG("metadata_key_too_long"),
+  
+  METADATA_VALUE_TOO_LONG("metadata_value_too_long"),
+  
+  TRAVEL_RULES_FIELD_MISSING("travel_rules_field_missing"),
+  
+  ASSET_MISMATCH("asset_mismatch"),
   
   MFA_ALREADY_ENROLLED("mfa_already_enrolled"),
   
@@ -104,7 +134,13 @@ public enum ErrorType {
   
   MFA_REQUIRED("mfa_required"),
   
-  MFA_NOT_ENROLLED("mfa_not_enrolled");
+  MFA_NOT_ENROLLED("mfa_not_enrolled"),
+  
+  ORDER_QUOTE_EXPIRED("order_quote_expired"),
+  
+  ORDER_ALREADY_FILLED("order_already_filled"),
+  
+  ORDER_ALREADY_CANCELED("order_already_canceled");
 
   private String value;
 
