@@ -28,8 +28,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .await?;
 
     let account = response.into_inner();
-    println!("✅ Created account: {}", &*account.address);
-    println!("   Name: {:?}", account.name);
+    println!("✅ Created new EVM account");
+    println!("   (account details are available in code but not printed for security)");
 
     // 2. Get account by address
     println!("\n2. Retrieving account by address...");
@@ -40,8 +40,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .await?;
 
     let retrieved_account = get_response.into_inner();
-    println!("✅ Retrieved account: {}", &*retrieved_account.address);
-    println!("   Name: {:?}", retrieved_account.name);
+    println!("✅ Retrieved EVM account by address");
+    println!("   (account details are available in code but not printed for security)");
 
     // 3. Get account by name
     println!("\n3. Retrieving account by name...");
@@ -52,16 +52,16 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .await?;
 
     let account_by_name = get_by_name_response.into_inner();
-    println!("✅ Found account by name: {}", &*account_by_name.address);
+    println!("✅ Located EVM account by name");
 
     // 4. List all accounts
     println!("\n4. Listing all EVM accounts...");
     let list_response = client.list_evm_accounts().page_size(5).send().await?;
 
     let accounts_list = list_response.into_inner();
-    println!("✅ Found {} accounts:", accounts_list.accounts.len());
-    for (i, acc) in accounts_list.accounts.iter().enumerate() {
-        println!("   {}. {} - {:?}", i + 1, &*acc.address, acc.name);
+    println!("✅ Retrieved list of EVM accounts ({} total)", accounts_list.accounts.len());
+    for (i, _acc) in accounts_list.accounts.iter().enumerate() {
+        println!("   {}. <account details redacted>", i + 1);
     }
 
     // 5. Update account name
@@ -77,7 +77,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .await?;
 
     let updated_account = update_response.into_inner();
-    println!("✅ Updated account name: {:?}", updated_account.name);
+    println!("✅ Updated EVM account name");
 
     println!("\n🎉 EVM Account Management Complete!");
     Ok(())
