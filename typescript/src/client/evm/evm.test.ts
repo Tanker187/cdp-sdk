@@ -1360,10 +1360,10 @@ describe("EvmClient", () => {
     const clientTokenBalances = [clientTokenBalance1, clientTokenBalance2, clientTokenBalance3];
 
     it("should list token balances", async () => {
-      const listDataTokenBalancesMock = CdpOpenApiClient.listDataTokenBalances as MockedFunction<
+      const listEvmTokenBalancesMock = CdpOpenApiClient.listDataTokenBalances as MockedFunction<
         typeof CdpOpenApiClient.listDataTokenBalances
       >;
-      listDataTokenBalancesMock.mockResolvedValue({
+      listEvmTokenBalancesMock.mockResolvedValue({
         balances: serverTokenBalances,
       });
 
